@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/Header/Header'
+import BottomHeader from '@/components/Header/BottomHeader'
+import Footer from '@/components/Footer';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="font-bodyFont bg-gray-300"><Header/><BottomHeader/>{children}<Footer/></body>
     </html>
   )
 }
