@@ -22,3 +22,9 @@ export interface StoreProduct{
     _id:number;
     quantity:number;
 };
+export interface StateProps{
+    productData:[];
+    favoriteData:[];
+    userInfo:null | string;
+    next:any;
+}
