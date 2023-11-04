@@ -36,19 +36,19 @@ export const nextSlice = createSlice({
            }
         },
         increaseQuantity:(state , action)=>{
-            const existingProduct = state.favoriteData.find((item:StoreProduct)=> item._id===action.payload._id);
+            const existingProduct = state.productData.find((item:StoreProduct)=> item._id===action.payload._id);
             existingProduct && existingProduct.quantity++;
         },
         decreaseQuantity:(state , action)=>{
-            const existingProduct = state.favoriteData.find((item:StoreProduct)=> item._id===action.payload._id);
+            const existingProduct = state.productData.find((item:StoreProduct)=> item._id===action.payload._id);
             if(existingProduct?.quantity ===1){
                 existingProduct.quantity = 1;
             }else{
-                existingProduct!.quantity++;
+                existingProduct!.quantity--;
             }
         },
         deleteProduct:(state , action)=>{
-            state.productData = state.productData.filter((item)=>item._id===action.payload._id)
+            state.productData = state.productData.filter((item)=>item._id!==action.payload)
          },
         resetCart:(state)=>{
             state.productData = [];
