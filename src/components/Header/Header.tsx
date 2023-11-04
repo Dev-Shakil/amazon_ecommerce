@@ -15,6 +15,7 @@ const Header = () => {
   const {data:session} = useSession();
   
   const dispatch = useDispatch();
+
   useEffect(()=>{
     if(session){
         dispatch(addUser({
@@ -23,7 +24,7 @@ const Header = () => {
             image:session?.user?.image,
         }))
     }
-  },[session])
+  },[session,dispatch])
   return (
     <div className="w-full h-20 flex items-center bg-amazon_blue text-lightText sticky top-0 z-50">
         <div className="h-full w-full mx-auto inline-flex items-center justify-between gap-1 mdl:gap-3 px-4">
@@ -49,7 +50,7 @@ const Header = () => {
             {
                 userInfo?(
                     <div className="flex items-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] gap-1">
-                        <img src={userInfo.image} alt="userImage" className="w-8 h-8 rounded-full object-cover" />
+                        <Image src={userInfo.image} alt="userImage" width={40} height={40} className="w-8 h-8 rounded-full object-cover" />
                         <div className="text-xs text-gray-100 flex-col justify-between">
                             <p className="text-white font-bold">{userInfo.name}</p>
                             <p>{userInfo.email}</p>
