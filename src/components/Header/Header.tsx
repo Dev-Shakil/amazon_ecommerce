@@ -45,8 +45,9 @@ const Header = () => {
     <div className="w-full h-20 flex items-center bg-amazon_blue text-lightText sticky top-0 z-50">
         <div className="h-full w-full mx-auto inline-flex items-center justify-between gap-1 mdl:gap-3 px-4">
 
-            <Link href={'/'} className="px-2 border border-transparent hover:border-white cursor-pointer duration-300 flex items-center justify-center h-[70%] ">
-                <Image src="/logo.png" className="w-28 object-cover mt-1 " width={200} alt="logo" height={100} />
+            <Link href={'/'} className="px-2 border border-transparent hover:border-white cursor-pointer duration-300 flex items-center justify-center h-[70%]   text-white font-bold text-2xl">
+                {/* <Image src="/logo.png" className="w-28 object-cover mt-1 " width={200} alt="logo" height={100} /> */}
+                Stylish Park
             </Link>
 
             <div className="px-2 border border-transparent hover:border-white cursor-pointer duration-300 xl:inline-flex items-center justify-center h-[70%] hidden gap-1">
